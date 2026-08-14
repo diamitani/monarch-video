@@ -1,0 +1,214 @@
+/* brand.css — scene styles for the monarch-video pipeline.
+   Every color and font resolves through CSS variables defined by
+   brand/tokens.css, which compose.py generates from brand/brand.json on
+   every build. The :root defaults below only matter if tokens.css is
+   missing (e.g. previewing brand.css standalone). */
+
+:root {
+  /* Neutral defaults — overridden by the generated tokens.css (brand.json) */
+  --brand-primary: #2563eb;
+  --brand-primary-light: #93c5fd;
+  --brand-primary-dark: #1e3a8a;
+  --brand-secondary: #7c3aed;
+  --brand-secondary-light: #c4b5fd;
+  --brand-secondary-dark: #4c1d95;
+  --brand-accent: #db2777;
+  --brand-accent-light: #f9a8d4;
+  --brand-accent-dark: #831843;
+  --brand-ink: #0b1220;
+  --brand-paper: #f8fafc;
+  --brand-white: #ffffff;
+  --brand-font: -apple-system, "Segoe UI", sans-serif;
+  --brand-font-display: var(--brand-font);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  overflow: hidden;
+  background: var(--brand-ink);
+  font-family: var(--brand-font);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- Scene surfaces ---------------------------------------------------- */
+
+.scene {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 130px 150px;
+}
+
+.scene--dark {
+  background: var(--brand-ink);
+  color: var(--brand-white);
+}
+
+.scene--light {
+  background: var(--brand-paper);
+  color: var(--brand-ink);
+}
+
+.scene--gradient {
+  background: linear-gradient(135deg, var(--brand-secondary-dark) 0%, var(--brand-primary-dark) 55%, var(--brand-ink) 100%);
+  color: var(--brand-white);
+}
+
+.scene--brand {
+  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 100%);
+  color: var(--brand-white);
+}
+
+/* ---- Photo backgrounds (per-scene `image`) ------------------------------ */
+
+.scene-image { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+.scene-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* Directional scrim: keeps left-aligned text readable, lets the photo breathe
+   on the right. Ink-derived so it always matches the brand near-black. */
+.scene-image::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(100deg, rgba(9, 9, 11, 0.95) 0%, rgba(9, 9, 11, 0.78) 45%, rgba(9, 9, 11, 0.50) 100%);
+}
+/* Photo scenes always render light-on-dark regardless of theme. */
+.scene--image { color: var(--brand-white); }
+.scene--image .eyebrow,
+.scene--image .accent,
+.scene--image .stat-value { color: var(--brand-primary-light); }
+.scene--image .point::before { background: var(--brand-accent); }
+
+/* Coloured-circles motif — decorative element drawn from brand tokens.
+   z-index:0 is load-bearing. Positioned elements paint above static ones, so
+   without it the circles render ON TOP of the headline and tint the glyphs. */
+.circles { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+/* No blur/backdrop-filter here on purpose: per-frame filter cost dominates
+   render time on constrained machines for no visible gain at 1080p. */
+.circles span {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.35;
+}
+
+/* ---- Type scale -------------------------------------------------------- */
+
+/* Every content element sits in its own stacking layer above the decoration.
+   Only static-flow elements get position:relative here — .logo and
+   .caption are already absolutely positioned and just need the z-index. */
+.eyebrow,
+.headline,
+.subhead,
+.stats,
+.points { position: relative; z-index: 1; }
+
+.eyebrow {
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--brand-primary-light);
+  margin-bottom: 30px;
+}
+
+.scene--light .eyebrow { color: var(--brand-secondary); }
+
+.headline {
+  font-family: var(--brand-font-display, var(--brand-font));
+  font-size: 104px;
+  font-weight: 900;
+  line-height: 1.03;
+  letter-spacing: -0.025em;
+  max-width: 20ch;
+}
+
+.headline--sm { font-size: 78px; }
+
+.subhead {
+  font-size: 41px;
+  font-weight: 400;
+  line-height: 1.34;
+  margin-top: 34px;
+  max-width: 30ch;
+  opacity: 0.9;
+}
+
+.accent { color: var(--brand-primary-light); }
+.scene--light .accent { color: var(--brand-secondary); }
+
+/* ---- Stat row ---------------------------------------------------------- */
+
+.stats { display: flex; gap: 100px; margin-top: 66px; }
+.stat-value {
+  font-family: var(--brand-font-display, var(--brand-font));
+  font-size: 116px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--brand-primary-light);
+}
+.scene--light .stat-value { color: var(--brand-secondary); }
+.stat-label {
+  font-size: 28px;
+  font-weight: 500;
+  margin-top: 16px;
+  opacity: 0.78;
+  max-width: 15ch;
+}
+
+/* ---- Bullets ----------------------------------------------------------- */
+
+.points { margin-top: 52px; display: flex; flex-direction: column; gap: 30px; }
+.point {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-size: 42px;
+  font-weight: 500;
+}
+.point::before {
+  content: "";
+  flex: none;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--brand-accent);
+}
+
+/* ---- Logo + end card --------------------------------------------------- */
+
+.logo { position: absolute; z-index: 2; top: 74px; left: 150px; width: 232px; height: 131px; display: flex; align-items: center; }
+.logo img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.logo--text { width: auto; height: auto; font-family: var(--brand-font-display, var(--brand-font)); font-weight: 900; font-size: 42px; letter-spacing: -0.01em; color: var(--brand-white); }
+
+.end-card {
+  position: absolute; inset: 0; z-index: 2;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 46px;
+  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 100%);
+  color: var(--brand-white);
+}
+.end-card .logo { position: static; width: 420px; height: 237px; }
+.end-card .logo img { width: 100%; height: 100%; object-fit: contain; }
+.end-card .logo--text { width: auto; height: auto; font-size: 96px; }
+.cta { font-size: 46px; font-weight: 600; }
+
+/* ---- Captions (accessibility + sound-off viewing) ---------------------- */
+
+.caption {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: 74px;
+  transform: translateX(-50%);
+  max-width: 74%;
+  text-align: center;
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1.34;
+  color: var(--brand-white);
+  background: color-mix(in srgb, var(--brand-ink) 85%, transparent);
+  padding: 18px 34px;
+  border-radius: 12px;
+}

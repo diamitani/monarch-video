@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "id": "monarch-video",
+  "name": "Monarch Video",
+  "version": "1.0.0",
+  "brand": "Monarch",
+  "publisher": "Diamitani Industries",
+  "repository": "https://github.com/diamitani/monarch-video",
+  "license": "MIT",
+  "entrypoint": "SKILL.md",
+  "keywords": [
+    "video",
+    "mp4",
+    "voiceover",
+    "kokoro",
+    "hyperframes",
+    "storyboard",
+    "animation",
+    "explainer",
+    "marketing",
+    "brand",
+    "text-to-video",
+    "ai-agent",
+    "claude",
+    "hermes",
+    "gpt"
+  ],
+  "capabilities": [
+    "document_intake",
+    "storyboard_generation",
+    "neural_voiceover",
+    "audio_synced_scene_timing",
+    "brand_kit_compilation",
+    "photographic_scene_backgrounds",
+    "dual_font_support",
+    "caption_generation",
+    "gsap_animation",
+    "mp4_render"
+  ],
+  "requirements": {
+    "runtime": ["Node 22+", "Python 3.10+", "ffmpeg"],
+    "renderer": "hyperframes (fetched via npx on first use)",
+    "tts_model": "kokoro-onnx + soundfile (local, ~27MB)",
+    "optional": "uv (to build a TTS venv on PEP-668 systems)"
+  },
+  "approval_required_for": [
+    "publication",
+    "publishing_with_identifiable_people"
+  ]
+}

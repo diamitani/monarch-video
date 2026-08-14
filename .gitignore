@@ -1,0 +1,16 @@
+# Build artifacts
+outputs/
+*.mp4
+*.wav
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node / hyperframes
+node_modules/
+
+# OS
+.DS_Store

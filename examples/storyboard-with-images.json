@@ -1,0 +1,67 @@
+{
+  "slug": "brand-film-60s",
+  "title": "Brand Film — 60s",
+  "aspect_ratio": "16:9",
+  "voice": "warm",
+  "captions": false,
+  "scenes": [
+    {
+      "id": "s1_hook",
+      "layout": "hook",
+      "theme": "gradient",
+      "duration": 7,
+      "image": "studio.jpg",
+      "eyebrow": "Your Brand",
+      "headline": "The hook <em>lands here.</em>",
+      "narration": "Open with the one idea that stops the scroll, spoken not read."
+    },
+    {
+      "id": "s2_problem",
+      "layout": "points",
+      "theme": "dark",
+      "duration": 10,
+      "image": "desk.jpg",
+      "eyebrow": "The Struggle",
+      "headline": "The problem in one line.",
+      "points": [
+        "Pain point one",
+        "Pain point two",
+        "Pain point three"
+      ],
+      "narration": "Describe the pain in plain words, one idea per scene."
+    },
+    {
+      "id": "s3_solution",
+      "layout": "statement",
+      "theme": "gradient",
+      "duration": 9,
+      "image": "workspace.jpg",
+      "eyebrow": "The Answer",
+      "headline": "The solution, <em>simply.</em>",
+      "subhead": "A supporting line that grounds the claim.",
+      "narration": "Explain what you do, in terms of the outcome the viewer gets."
+    },
+    {
+      "id": "s4_proof",
+      "layout": "stats",
+      "theme": "dark",
+      "duration": 10,
+      "image": "lights.jpg",
+      "eyebrow": "By The Numbers",
+      "headline": "Proof, in three numbers.",
+      "stats": [
+        { "value": "10x", "label": "First metric" },
+        { "value": "40%", "label": "Second metric" },
+        { "value": "4.9", "label": "Third metric" }
+      ],
+      "narration": "Lead with the numbers that matter, spelled out for the voice."
+    },
+    {
+      "id": "s5_cta",
+      "layout": "end",
+      "duration": 6,
+      "cta": "yourbrand.com",
+      "narration": "Close with a single clear call to action."
+    }
+  ]
+}

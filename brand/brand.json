@@ -1,0 +1,24 @@
+{
+  "name": "Your Brand",
+  "domain": "yourbrand.com",
+  "font_family": "Brand Sans",
+  "font_family_display": "Brand Serif",
+  "logo": "auto",
+  "logo_end": "auto",
+  "logo_alt": "",
+  "fonts": [],
+  "colors": {
+    "primary": "#2563eb",
+    "primary_light": "#93c5fd",
+    "primary_dark": "#1e3a8a",
+    "secondary": "#7c3aed",
+    "secondary_light": "#c4b5fd",
+    "secondary_dark": "#4c1d95",
+    "accent": "#db2777",
+    "accent_light": "#f9a8d4",
+    "accent_dark": "#831843",
+    "ink": "#0b1220",
+    "paper": "#f8fafc",
+    "white": "#ffffff"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "slug": "acme-product-launch-60s",
+  "title": "Acme — Launch",
+  "aspect_ratio": "16:9",
+  "voice": "warm",
+  "captions": true,
+  "scenes": [
+    {
+      "id": "s1_hook",
+      "layout": "hook",
+      "theme": "gradient",
+      "duration": 7,
+      "eyebrow": "Acme",
+      "headline": "You're losing hours every week to busywork.",
+      "narration": "You're losing hours every week to busywork. There's a better way, and it starts now."
+    },
+    {
+      "id": "s2_problem",
+      "layout": "points",
+      "theme": "dark",
+      "duration": 10,
+      "eyebrow": "The Old Way",
+      "headline": "Manual, scattered, slow",
+      "points": [
+        "Five tools that don't talk to each other",
+        "Hand-typed updates and missed handoffs",
+        "Zero visibility into what's next"
+      ],
+      "narration": "The old way means five tools that don't talk to each other, hand-typed updates, missed handoffs, and zero visibility into what comes next."
+    },
+    {
+      "id": "s3_solution",
+      "layout": "statement",
+      "theme": "brand",
+      "duration": 9,
+      "eyebrow": "The Acme Way",
+      "headline": "One platform. Every workflow.",
+      "subhead": "Everything your team does, in one place, on autopilot.",
+      "narration": "Acme brings every workflow into one platform. Your team gets one place for everything, and the busywork runs itself."
+    },
+    {
+      "id": "s4_proof",
+      "layout": "stats",
+      "theme": "gradient",
+      "duration": 10,
+      "eyebrow": "By The Numbers",
+      "headline": "Built for speed and scale",
+      "stats": [
+        { "value": "10x", "label": "Faster setup" },
+        { "value": "40%", "label": "Less busywork" },
+        { "value": "4.9", "label": "Average rating" }
+      ],
+      "narration": "Teams set up in ten times less time, cut busywork by forty percent, and rate Acme four point nine out of five."
+    },
+    {
+      "id": "s5_cta",
+      "layout": "end",
+      "duration": 6,
+      "cta": "acme.com",
+      "narration": "See what Acme can do for your team. Visit acme dot com."
+    }
+  ]
+}

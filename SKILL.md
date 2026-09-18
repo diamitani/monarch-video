@@ -1,22 +1,7 @@
 ---
 name: monarch-video
-title: Monarch Video
-version: 1.0.0
-author: Diamitani Industries
-brand: Monarch
-description: Turn any document (deck, PDF, brief, one-pager) or plain-English prompt into a professional MP4 with neural voiceover, on-brand photography, and storyboard-driven sequencing — locked to your own brand kit (logo, colors, fonts, images). Use when someone says "make a video", "turn this deck into a video", "explainer video", "product video", "prospect video", "add a voiceover", or "render this to MP4". Produces a real .mp4 with studio-grade narration — never a robotic voice.
-license: MIT
-tags:
-  - video
-  - mp4
-  - voiceover
-  - kokoro
-  - hyperframes
-  - storyboard
-  - animation
-  - explainer
-  - marketing
-  - brand
+description: >
+  Turn any document (deck, PDF, brief, one-pager) or plain-English prompt into a professional MP4 with neural voiceover, on-brand photography, and storyboard-driven sequencing — locked to your own brand kit (logo, colors, fonts, images). Use when someone says "make a video", "turn this deck into a video", "explainer video", "product video", "prospect video", "add a voiceover", or "render this to MP4". Produces a real .mp4 with studio-grade narration — never a robotic voice.
 ---
 
 # Monarch Video
